@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Spendings</h1>
+<div class="chartkick">
+  <p class="text-danger border-bottom border-danger">グラフを追加</p>
+  <%= column_chart Spending.pluck(:month, :payment) %>
+</div>
 
 <table>
   <thead>
