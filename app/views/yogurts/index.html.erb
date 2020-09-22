@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Yogurts</h1>
-
+<%= pie_chart Yogurt.group(:group).count %>
 <table>
   <thead>
     <tr>
