@@ -1,12 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Spendings</h1>
-<div class="chartkick">
-  <p class="text-danger border-bottom border-danger">グラフを追加</p>
-  <%= column_chart Spending.pluck(:month, :payment) %>
+<h1 class="border-bottom border-danger pb-2"> My Monthly Spending</h1>
+<div class="chartkick mt-4 d-flex justify-content-between">
+  <%= column_chart Spending.pluck(:month, :payment),
+                   id: 'Monthly-Spending',
+                   width: "350px", height: "350px",
+                   xtitle: "Month", ytitle: "Spending",
+                   min: 0, max: 200000,
+                   colors: ['#b00'] %>
+  <%= scatter_chart Spending.pluck(:month, :payment),
+                    xtitle: "Month", ytitle: "Spending",
+                    width: "350px", height: "350px",
+                    colors: ['#b00'] %>
 </div>
-
-<table>
+<table class="mt-3">
   <thead>
     <tr>
       <th>Month</th>
@@ -30,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Spending', new_spending_path %>
+<%= link_to 'New Spending >>', new_spending_path %>

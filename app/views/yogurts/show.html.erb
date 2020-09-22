@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @yogurt.name %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @yogurt.group %>
+</p>
+
+<%= link_to 'Edit', edit_yogurt_path(@yogurt) %> |
+<%= link_to 'Back', yogurts_path %>
