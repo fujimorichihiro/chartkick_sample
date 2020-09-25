@@ -29,3 +29,5 @@
 <%= link_to 'New Yogurt', new_yogurt_path %>
 
 <%= line_chart Yogurt.group_by_day(:created_at).count, width: "350px", height: "350px"%>
+
+<%= bar_chart Yogurt.group_by_day(:created_at).count, width: "350px", height: "350px" %>
